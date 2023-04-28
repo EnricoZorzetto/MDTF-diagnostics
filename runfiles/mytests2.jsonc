@@ -15,27 +15,27 @@
     // models in a single invocation. Comment out or delete the first entry and
     // uncomment the second to run NOAA-GFDL-AM4 only for the MJO_prop_amp POD,
     // and likewise for the SM_ET_coupling POD.
-    {
-      "CASENAME" : "QBOi.EXP1.AMIP.001",
-      "model" : "CESM",
-      "convention" : "CESM",
-      "FIRSTYR" : 1977,
-      "LASTYR" : 1981,
-      "pod_list": [
-          // Optional: PODs to run for this model only (defaults to all)
-          "Wheeler_Kiladis",
-          "EOF_500hPa",
-          "MJO_suite",
-          "MJO_teleconnection"
-          // "convective_transition_diag",
-          // "precip_diurnal_cycle",
-          // "ocn_surf_flux_diag",
-          // "mixed_layer_depth",
-          // "tropical_pacific_sea_level",
-          // "temp_extremes_distshape",
-          // "precip_buoy_diag"
-      ]
-    }
+    // {
+    //   "CASENAME" : "QBOi.EXP1.AMIP.001",
+    //   "model" : "CESM",
+    //   "convention" : "CESM",
+    //   "FIRSTYR" : 1977,
+    //   "LASTYR" : 1981,
+    //   "pod_list": [
+    //       // Optional: PODs to run for this model only (defaults to all)
+    //       "Wheeler_Kiladis",
+    //       "EOF_500hPa"
+    //       // "MJO_suite",
+    //       // "MJO_teleconnection"
+    //       // "convective_transition_diag",
+    //       // "precip_diurnal_cycle",
+    //       // "ocn_surf_flux_diag",
+    //       // "mixed_layer_depth",
+    //       // "tropical_pacific_sea_level",
+    //       // "temp_extremes_distshape",
+    //       // "precip_buoy_diag"
+    //   ]
+    // }
     // {
     //   "CASENAME" : "GFDL.CM4.c96L32.am4g10r8",
     //   "model" : "AM4",
@@ -60,6 +60,14 @@
     //   "LASTYR" : 2004,
     //   "pod_list": ["example"]
     // }
+    {
+      "CASENAME" : "ESM4-GLASS",
+      "model" : "ESM4",
+      "convention" : "None",
+      "FIRSTYR" : 1980,
+      "LASTYR" : 1984,
+      "pod_list": ["map_snow"]
+    }
   ],
   // PATHS ---------------------------------------------------------------------
   // Location of supporting data downloaded when the framework was installed.
@@ -72,6 +80,8 @@
   "OBS_DATA_ROOT": "/arch5/enz/mdtf/obs_data/",
 
   // Parent directory containing results from different models.
+  // "MODEL_DATA_ROOT": "/arch5/enz/mdtf/model_data/",
+  // "MODEL_DATA_ROOT": "/arch5/enz/lm4p2/xanadu/lm4p2sc-GSWP3-hist-snow-he/gfdl.ncrc3-intel18-prod/pp/land/ts/monthly/5yr/",
   "MODEL_DATA_ROOT": "/arch5/enz/mdtf/model_data/",
 
   // Working directory. Defaults to OUTPUT_DIR if blank.
@@ -84,13 +94,13 @@
   // Location of the Anaconda/miniconda installation to use for managing
   // dependencies (path returned by running `conda info --base`.) If empty,
   // framework will attempt to determine location of system's conda installation.
-  "conda_root": "/home/oar.gfdl.mdtf/miniconda3",
+  "conda_root": "/nbhome/Enrico.Zorzetto/software/miniconda3",
 
   // Directory containing the framework-specific conda environments. This should
   // be equal to the "--env_dir" flag passed to conda_env_setup.sh. If left
   // blank, the framework will look for its environments in the system default
   // location.
-  "conda_env_root": "/home/oar.gfdl.mdtf/miniconda3/envs",
+  "conda_env_root": "/nbhome/Enrico.Zorzetto/software/miniconda3/envs",
 
   // SETTINGS ------------------------------------------------------------------
   // Any command-line option recognized by the mdtf script (type `mdtf --help`)
